@@ -1,0 +1,78 @@
+
+
+-----------------------------------------------------------------
+
+配置key
+
+
+生成key
+ssh-keygen -t rsa -C "785999984@qq.com"
+
+复制key
+打开*.pub文件，复制内容到Settings--Account settings--SSH and GPG Keys--New SSH Key
+
+验证key
+
+执行命令
+ssh -T git@github.com
+显示"You’ve successfully authenticated,..." 表示OK，否则failed
+
+----------------------------------------------------------------------------------
+
+git config --global user.name "wowo8688"
+git config --global user.email "785999984@qq.com"
+git remote add origin git@github.com:wowo8688/first_newlife.git
+
+
+git add 123abc.txt
+git commit -m 123abc.txt
+git push origin master
+
+
+
+
+错误提示1
+执行git push origin master
+Updates were rejected because the tip of your current branch is behind
+现象
+$ git push origin master
+To github.com:wowo8688/first_newlife.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'github.com:wowo8688/first_newlife.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+
+临时解决
+git push -u origin master -f
+
+永久解决
+git pull origin master
+
+git branch test2
+git push -u origin test2
+
+
+错误提示2
+执行git pull origin master
+fatal: refusing to merge unrelated histories
+
+
+----------------------------------------------------------------------------------
+
+
+github搭建html网站到外网
+https://www.cnblogs.com/huny/p/12899057.html
+
+-----------------------------------------------------------------
+
+安装--3个
+
+Git小乌龟的安装及使用
+https://www.jianshu.com/p/33108325fc87
+
+-----------------------------------------------------------------
+
+
